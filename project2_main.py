@@ -146,7 +146,7 @@ class SavingAccount(Account):
 
         :return: A string representation of the saving account.
         """
-        return f"SAVING ACCOUNT: Account name = {self.get_name()}, Account balance = {self.get_balance():.2f}"
+        return f"SAVING ACCOUNT: Account name = {self.get_name()}, Account balance = ${self.get_balance():.2f}"
 
 class BankApp:
     def __init__(self) -> None:
@@ -165,7 +165,7 @@ class BankApp:
         try:
             amount = float(amount)
             if self.account.deposit(amount):
-                messagebox.showinfo("Deposit", f"Successfully deposited {amount:.2f}")
+                messagebox.showinfo("Deposit", f"Successfully deposited ${amount:.2f}")
         except ValueError:
             messagebox.showerror("Error", "Please enter a valid number for the deposit amount")
 
@@ -178,7 +178,7 @@ class BankApp:
         try:
             amount = float(amount)
             if self.account.withdraw(amount):
-                messagebox.showinfo("Withdraw", f"Successfully withdrew {amount:.2f}")
+                messagebox.showinfo("Withdraw", f"Successfully withdrew ${amount:.2f}")
         except ValueError:
             messagebox.showerror("Error", "Please enter a valid number for the withdrawal amount")
 
